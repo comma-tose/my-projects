@@ -1,7 +1,3 @@
-# GNU GPL 2.0 Only
-# Copyright (c) 2025 comma-tose
-# Python-based program to show OS info.
-
 # This program was inspired by the program Neofetch.
 # However, it does not use code from it.
 
@@ -74,4 +70,5 @@ print("----------------------------------------------------")
 # Get Platform info (DONE)
 # Apologize to Aiden
 # Write makefile
+
 # Polish
