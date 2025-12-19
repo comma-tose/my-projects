@@ -1,0 +1,1 @@
+This repository is a collection of my various projects that range from complete to broken and abandoned.
