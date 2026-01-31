@@ -63,13 +63,11 @@ def printInbox():
     i = 0
     for i in range(len(inbox)):
         print(inbox[i])
-    mainMenu()
 
 def printJunk():
     i = 0
     for i in range(len(junk)):
         print(junk[i])
-    mainMenu()
 
 def newMessage():
     message = str(input("Type your message...\n"))
@@ -83,7 +81,6 @@ def newMessage():
     except KeyboardInterrupt:
         print("\nKeyboardInterrupt: Safely exiting...")
         saveAndExit()
-    mainMenu()
 
 def blockUser():
     global blockedUsers
@@ -91,7 +88,6 @@ def blockUser():
         toBlock = str(input("Enter the user to block: "))
         blockedUsers.append(toBlock)
         print(f"Blocked {toBlock}.")
-        mainMenu()
     except KeyboardInterrupt:
         print("\nKeyboardInterrupt: Safely exiting...")
         saveAndExit()
@@ -108,7 +104,6 @@ def unblockUser():
         print(f"Unbocked {toUnblock}.")
     except ValueError:
         print(f"{toUnblock} is not blocked.")
-    mainMenu()
 
 def allowUser():
     global allowedUsers    
@@ -116,7 +111,6 @@ def allowUser():
         toAllow = str(input("Enter the user to allow: "))
         allowedUsers.append(toAllow)
         print(f"Allowed {toAllow}.")
-        mainMenu()
     except KeyboardInterrupt:
         print("\nKeyboardInterrupt: Safely exiting...")
         saveAndExit()
@@ -133,7 +127,6 @@ def unallowUser():
         print(f"Unallowed {toUnallow}.")
     except ValueError:
         print(f"{toUnallow} is not allowed.")
-    mainMenu()
 
 def saveAndExit():    
     with open("inbox.txt", "w") as file:
@@ -185,7 +178,6 @@ def choice():
                 publicInbox = "False"
             else:
                 publicInbox = "True"
-            mainMenu()
         elif option == "5":
             blockUser()
         elif option == "6":
@@ -201,13 +193,14 @@ def choice():
                 print("Inboxes cleared.")
             else:
                 print("Cancelled, Inboxes not cleared.")
-            mainMenu()
         elif option == "0":
             saveAndExit()
-        else:
-            mainMenu()
     except KeyboardInterrupt:
         print("\nKeyboardInterrupt: Safely exiting...")
         saveAndExit()
 
-mainMenu()
+while True:
+    mainMenu()
+
+print("If you are seeing this message the code somehow escaped the program loop.\nThis should not happen. Safely exiting...")
+saveAndExit()
